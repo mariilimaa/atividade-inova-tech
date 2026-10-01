@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovatech | Soluções Tecnológicas & Inovação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0F172A',
+                            accent: '#2563EB',
+                            purple: '#7C3AED',
+                            cyan: '#06B6D4',
+                            dark: '#0B0F19'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(11, 15, 25, 0.92) 0%, rgba(15, 23, 42, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glow-card:hover {
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Menu Horizontal Fixo -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tight text-white">
+                        INOVA<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">TECH</span>
+                    </span>
+                </div>
+
+                <!-- Links Desktop -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#inicio" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2 border-b-2 border-transparent hover:border-cyan-400">Início</a>
+                    <a href="#sobre" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2 border-b-2 border-transparent hover:border-cyan-400">Sobre Nós</a>
+                    <a href="#localizacao" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2 border-b-2 border-transparent hover:border-cyan-400">Localização</a>
+                </nav>
+
+                <!-- CTA Botão Navbar -->
+                <div class="hidden md:flex items-center">
+                    <a href="#localizacao" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-blue-600 to-purple-600 group-hover:from-blue-600 group-hover:to-purple-600 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800 transition shadow-lg shadow-blue-600/20">
+                        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-slate-950 rounded-[10px] group-hover:bg-opacity-0 flex items-center gap-2">
+                            Fale Conosco <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Início</a>
+            <a href="#sobre" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Sobre Nós</a>
+            <a href="#localizacao" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Localização</a>
+            <a href="#localizacao" class="mobile-link block text-center w-full mt-4 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium">Fale Conosco</a>
+        </div>
+    </header>
+
+    <!-- Seção Início (Hero) -->
+    <section id="inicio" class="hero-bg relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        <span>Transformação Digital do Futuro</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Transformando Ideias em <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">Inovação Tecnológica</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Na Inovatech, criamos ecossistemas digitais de alta performance, inteligência artificial aplicada e arquitetura de software escalável para impulsionar o seu negócio.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#sobre" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold shadow-lg shadow-blue-500/25 transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            Conheça a Inovatech <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#localizacao" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold transition-all text-center">
+                            Nossa Localização
+                        </a>
+                    </div>
+
+                    <!-- Métricas Rápidas -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80">
+                        <div>
+                            <p class="text-3xl font-bold text-white">99.8%</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Uptime Garantido</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">250+</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Projetos Entregues</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">15+</p>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Anos no Mercado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elemento Visual Interativo -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl bg-gradient-to-tr from-blue-900/40 to-purple-900/40 p-1 border border-slate-700/50 backdrop-blur-xl shadow-2xl">
+                        <div class="w-full h-full bg-slate-950/90 rounded-[22px] p-6 flex flex-col justify-between overflow-hidden relative">
+                            <!-- Code Decorator -->
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <span class="text-xs text-slate-500 font-mono">inovatech-system.v2</span>
+                            </div>
+
+                            <div class="space-y-4 my-auto font-mono text-xs sm:text-sm text-slate-300">
+                                <p class="text-purple-400"><span class="text-blue-400">const</span> inovatech = <span class="text-yellow-400">new</span> TechEnterprise();</p>
+                                <p class="pl-4 text-slate-400">// Conectando ecossistemas inteligentes</p>
+                                <p class="pl-4"><span class="text-blue-400">await</span> inovatech.<span class="text-cyan-400">deploySolutions</span>({</p>
+                                <p class="pl-8 text-emerald-400">ai: <span class="text-white">true</span>,</p>
+                                <p class="pl-8 text-emerald-400">cloudNative: <span class="text-white">true</span>,</p>
+                                <p class="pl-8 text-emerald-400">security: <span class="text-white">"Enterprise Grade"</span></p>
+                                <p class="pl-4">});</p>
+                                <p class="text-emerald-400">&gt; Status: Inovando o mercado...</p>
+                            </div>
+
+                            <!-- Card Flutuante Interno -->
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center gap-4">
+                                <div class="p-3 rounded-lg bg-blue-500/20 text-blue-400">
+                                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Segurança & Escalabilidade</p>
+                                    <p class="text-xs text-slate-400">Sistemas prontos para o crescimento</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400">Quem Somos</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Pioneiros na construção da próxima geração tecnológica</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- História & Introdução -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="space-y-6 text-slate-300">
+                    <h3 class="text-2xl font-bold text-white">Liderando soluções digitais com excelência e propósito</h3>
+                    <p class="leading-relaxed">
+                        Fundada com o objetivo de revolucionar a maneira como as empresas interagem com a tecnologia, a <strong class="text-white">Inovatech</strong> combina inteligência técnica, design moderno e estratégias focadas em resultados.
+                    </p>
+                    <p class="leading-relaxed">
+                        Nossa equipe é formada por especialistas apaixonados por criar softwares robustos, infraestruturas na nuvem altamente seguras e arquiteturas orientadas a dados que impulsionam empresas rumo à transformação digital plena.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Equipe Inovatech" class="rounded-2xl shadow-lg border border-slate-800 object-cover h-48 w-full" />
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Reunião de Inovação" class="rounded-2xl shadow-lg border border-slate-800 object-cover h-48 w-full mt-6" />
+                </div>
+            </div>
+
+            <!-- Cards: Missão, Visão e Valores -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Missão -->
+                <div class="glow-card p-8 rounded-2xl bg-slate-950/60 border border-slate-800 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Nossa Missão</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Desenvolver soluções de software e tecnologia ponta a ponta que otimizem processos, gerem valor real e acelerem o crescimento sustentável dos nossos clientes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Visão -->
+                <div class="glow-card p-8 rounded-2xl bg-slate-950/60 border border-slate-800 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6">
+                            <i data-lucide="eye" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Nossa Visão</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Ser reconhecida globalmente como hub de referência em inovação tecnológica, destacando-se pela excelência técnica, ética e capacidade de antecipar tendências.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Valores -->
+                <div class="glow-card p-8 rounded-2xl bg-slate-950/60 border border-slate-800 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Nossos Valores</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Inovação contínua, transparência absoluta, foco na segurança de dados, agilidade no desenvolvimento e compromisso inegociável com a qualidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Localização -->
+    <section id="localizacao" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400">Onde Estamos</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Venha nos visitar ou mande uma mensagem</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Informações e Mapa -->
+                <div class="lg:col-span-6 space-y-8">
+                    <!-- Cards de Informação de Contato -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 rounded-lg bg-blue-500/10 text-blue-400 shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-white">Endereço</h5>
+                                <p class="text-xs text-slate-400 mt-1">Av. Paulista, 1000 - Bela Vista<br>São Paulo - SP, 01310-100</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 rounded-lg bg-purple-500/10 text-purple-400 shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-white">E-mail</h5>
+                                <p class="text-xs text-slate-400 mt-1">contato@inovatech.com.br<br>suporte@inovatech.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-white">Telefone</h5>
+                                <p class="text-xs text-slate-400 mt-1">+55 (11) 4003-8900<br>+55 (11) 98765-4321</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-4">
+                            <div class="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-semibold text-white">Atendimento</h5>
+                                <p class="text-xs text-slate-400 mt-1">Segunda a Sexta<br>08h00 às 18h00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embed Mapa Interativo -->
+                    <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-xl h-72 relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098192621063!2d-46.65390548447582!3d-23.56490238468087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f228c010!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: grayscale(0.8) contrast(1.2) opacity(0.85);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contato -->
+                <div class="lg:col-span-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-2">Envie uma mensagem</h3>
+                        <p class="text-slate-400 text-sm mb-6">Fale com nossos consultores técnicos e descubra como podemos acelerar seu projeto.</p>
+
+                        <!-- Mensagem de Sucesso (Oculta por padrão) -->
+                        <div id="form-success" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                                <span>Mensagem enviada com sucesso! Entraremos em contato em breve.</span>
+                            </div>
+                        </div>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Nome Completo</label>
+                                <input type="text" required placeholder="Seu nome" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition" />
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">E-mail Corporativo</label>
+                                    <input type="email" required placeholder="voce@empresa.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Telefone / WhatsApp</label>
+                                    <input type="tel" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Assunto</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
+                                    <option>Desenvolvimento de Software</option>
+                                    <option>Inteligência Artificial & Dados</option>
+                                    <option>Consultoria em Cloud & Segurança</option>
+                                    <option>Outros Assuntos</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Mensagem</label>
+                                <textarea rows="4" required placeholder="Descreva brevemente sua necessidade ou projeto..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i> Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo Footer -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-xl font-extrabold text-white">
+                        INOVA<span class="text-cyan-400">TECH</span>
+                    </span>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-xs text-slate-500 text-center">
+                    &copy; 2026 Inovatech Soluções Tecnológicas Ltda. Todos os direitos reservados.
+                </p>
+
+                <!-- Social Links -->
+                <div class="flex items-center gap-4 text-slate-400">
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Javascript -->
+    <script>
+        // Inicializa ícones Lucide
+        lucide.createIcons();
+
+        // Toggle do Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Formulário de Contato
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('form-success');
+            const form = document.getElementById('contact-form');
+            
+            successBox.classList.remove('hidden');
+            form.reset();
+
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Sombra da Navbar no Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-slate-950/95', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-slate-950/95', 'shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
